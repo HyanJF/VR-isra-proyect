@@ -10,7 +10,11 @@ public class TargetMoving : MonoBehaviour
 
     [Header("Movement Settings")]
     [SerializeField] private Transform[] waypoints;  
-    [SerializeField] private float moveSpeed = 3f;   
+    [SerializeField] private float moveSpeed = 3f;
+
+    //Todavia se tiene que asignar desde el inspector, pero se puede hacer de golpe
+    [Header("Score")]
+    [SerializeField] private ScoreManager scoreManager;
 
     private int currentIndex = 0;     
     private int direction = 1;        
@@ -89,6 +93,16 @@ public class TargetMoving : MonoBehaviour
 
         if (currentHP <= 0)
         {
+            // Avisamos al ScoreManager que este target fue destruido
+            if (scoreManager != null)
+            {
+                scoreManager.OnTargetDestroyed();
+            }
+            else
+            {
+                Debug.LogWarning("ScoreManager no asignado en este Target.");
+            }
+
             Destroy(gameObject);
         }
     }
