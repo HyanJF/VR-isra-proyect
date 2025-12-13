@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7760862565764351444}
   - component: {fileID: 5168971677816999577}
   - component: {fileID: 959854129953852965}
+  - component: {fileID: 3849740268546281188}
   m_Layer: 0
   m_Name: BulletContainer
   m_TagString: Untagged
@@ -76,14 +77,26 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.06
-  m_Height: 0.3
+  m_Radius: 0.1
+  m_Height: 0.5
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: -0.13}
+--- !u!114 &3849740268546281188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4944815799496555262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bef492742fdaa664d909ec8612da826a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8950582983100756052
 GameObject:
   m_ObjectHideFlags: 0

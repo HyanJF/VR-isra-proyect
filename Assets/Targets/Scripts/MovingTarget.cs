@@ -77,6 +77,7 @@ public class TargetMoving : MonoBehaviour
     //
     //     if (movingTarget != null)
     //     {
+
     //         movingTarget.TakeDamage();   
     //     }
     // }

@@ -9,7 +9,7 @@ public class GunController : MonoBehaviour
     public float bulletSpeed = 20f;
 
     [Header("Balas")]
-    public int maxAmmo = 12;
+    public int maxAmmo = 99;
     public int currentAmmo;
 
     [Header("UI")]
