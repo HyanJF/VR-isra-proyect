@@ -14,13 +14,5 @@ public class BulletDamage : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
-        SimpleTarget simpleTarget = other.GetComponentInParent<SimpleTarget>();
-        if (simpleTarget != null)
-        {
-            simpleTarget.TakeDamage();
-            Destroy(gameObject);
-            return;
-        }
     }
 }
