@@ -3,14 +3,11 @@ using TMPro;
 
 public class RaceTimer : MonoBehaviour
 {
-    [Header("Display (assign one)")]
+    [Header("Display")]
     public TextMeshProUGUI tmpDisplay;
 
     [Header("Options")]
     public bool startOnPlay = true;
-    public Transform followHandTransform;
-    public Vector3 followLocalOffset = Vector3.zero;
-    public bool followRotation = false;
 
     private float elapsed = 0f;
     private bool running = false;
@@ -28,13 +25,6 @@ public class RaceTimer : MonoBehaviour
         {
             elapsed += Time.deltaTime;
             UpdateDisplay(elapsed);
-        }
-
-        if (followHandTransform != null)
-        {
-            transform.position = followHandTransform.TransformPoint(followLocalOffset);
-            if (followRotation)
-                transform.rotation = followHandTransform.rotation;
         }
     }
 
