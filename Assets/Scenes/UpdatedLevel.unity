@@ -76593,6 +76593,9 @@ MonoBehaviour:
   loop: 0
   playerRigRoot: {fileID: 2070635173}
   characterController: {fileID: 2070635172}
+  locomotionProvidersToDisable:
+  - {fileID: 46662506}
+  - {fileID: 46662502}
 --- !u!23 &4912300360124906647
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -124176,6 +124179,9 @@ MonoBehaviour:
   loop: 0
   playerRigRoot: {fileID: 2070635173}
   characterController: {fileID: 2070635172}
+  locomotionProvidersToDisable:
+  - {fileID: 46662506}
+  - {fileID: 46662502}
 --- !u!135 &8398636476762520976
 SphereCollider:
   m_ObjectHideFlags: 0
