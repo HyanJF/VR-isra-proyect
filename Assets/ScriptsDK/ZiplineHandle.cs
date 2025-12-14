@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using UnityEngine.XR.Interaction.Toolkit.Locomotion;
 
 [RequireComponent(typeof(XRGrabInteractable))]
 public class ZiplineHandle : MonoBehaviour
@@ -17,6 +18,9 @@ public class ZiplineHandle : MonoBehaviour
     [Header("Player")]
     public GameObject playerRigRoot;
     public CharacterController characterController;
+
+    [Header("Locomotion Lock")]
+    public List<LocomotionProvider> locomotionProvidersToDisable = new List<LocomotionProvider>();
 
     XRGrabInteractable grabInteractable;
     Coroutine travelCoroutine;
@@ -37,18 +41,19 @@ public class ZiplineHandle : MonoBehaviour
 
     private void OnGrabbed(SelectEnterEventArgs args)
     {
-        // Ensure player references exist
         if (playerRigRoot == null || characterController == null)
-        {
-            Debug.LogWarning("ZiplineHandle: playerRigRoot or characterController not assigned.");
             return;
-        }
 
-        // find nearest path point as start target
+        DisableLocomotion();
+
         targetIndex = FindNearestPointIndex(transform.position);
-        if (travelCoroutine != null) StopCoroutine(travelCoroutine);
+
+        if (travelCoroutine != null)
+            StopCoroutine(travelCoroutine);
+
         travelCoroutine = StartCoroutine(TravelAlongPath());
     }
+
 
     private void OnReleased(SelectExitEventArgs args)
     {
@@ -57,7 +62,10 @@ public class ZiplineHandle : MonoBehaviour
             StopCoroutine(travelCoroutine);
             travelCoroutine = null;
         }
+
+        EnableLocomotion();
     }
+
 
     private IEnumerator TravelAlongPath()
     {
@@ -139,4 +147,23 @@ public class ZiplineHandle : MonoBehaviour
         }
         return next;
     }
+
+    void DisableLocomotion()
+    {
+        foreach (var provider in locomotionProvidersToDisable)
+        {
+            if (provider != null && provider.enabled)
+                provider.enabled = false;
+        }
+    }
+
+    void EnableLocomotion()
+    {
+        foreach (var provider in locomotionProvidersToDisable)
+        {
+            if (provider != null)
+                provider.enabled = true;
+        }
+    }
+
 }
