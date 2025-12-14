@@ -7,11 +7,12 @@ TagManager:
   - Anchor
   - Bullet
   - Gun
+  - Dummies
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Weapon
   - Water
   - UI
   - 
