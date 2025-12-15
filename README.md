@@ -54,4 +54,4 @@ Sus **condiciones** son las siguientes:
       - Tener condición **Puntuación del Jugador > Puntuación de IA**
     - Si condición es falsa **Seguir Curso**
 
-La IA va a empezar siguiendo el curso. Una vez que detecte un objetivo, irá por él hasta que entre a su rango de disparo. Una vez que pueda disparar, dispara hasta destruir el objetivo. Una vez destruido, va a checar si su puntuación es mayor a la del jugador. Si su puntuación es **mayor** a la del jugador, sigue con el curso. Si su puntuación es **menor** a la del jugador, va a buscar más objetivos hasta obtener una **mayor** puntuación que el jugador.
+La IA va a empezar **siguiendo el curso**. Una vez que **detecte un objetivo**, irá por él hasta que entre a su **rango de disparo**. Una vez que pueda **disparar**, dispara hasta **destruir el objetivo**. Una vez destruido, va a checar si su **puntuación es mayor a la del jugador**. Si su puntuación es **mayor** a la del jugador, sigue con el curso. Si su puntuación es **menor** a la del jugador, va a buscar más objetivos hasta obtener una **mayor** puntuación que el jugador.
