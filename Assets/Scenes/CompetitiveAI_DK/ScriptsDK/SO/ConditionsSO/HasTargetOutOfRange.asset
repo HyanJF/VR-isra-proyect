@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04621bb3efbd0d24295ea524ece098a2, type: 3}
-  m_Name: delete
+  m_Script: {fileID: 11500000, guid: 7b6c9f3d50b3a234f9857ed378375927, type: 3}
+  m_Name: HasTargetOutOfRange
   m_EditorClassIdentifier: 
-  transitions: []

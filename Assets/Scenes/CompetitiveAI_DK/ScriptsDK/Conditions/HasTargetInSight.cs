@@ -3,15 +3,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "HasTargetInSight", menuName = "FSM/Conditions/HasTargetInSight")]
 public class HasTargetInSight : Condition
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override bool Check(StateMachine sm)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        CompetitiveAI ai = sm.GetComponent<CompetitiveAI>();
+        return ai.IsTargetInRange(ai.shootingRange);
     }
 }

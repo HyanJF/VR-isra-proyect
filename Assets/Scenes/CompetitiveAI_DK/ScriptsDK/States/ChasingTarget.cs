@@ -3,15 +3,12 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ChasingTarget", menuName = "FSM/States/ChasingTarget")]
 public class ChasingTarget : State
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override void UpdateState(StateMachine sm)
     {
-        
-    }
+        CompetitiveAI ai = sm.GetComponent<CompetitiveAI>();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (ai.currentTarget == null) return;
+
+        ai.MoveTo(ai.currentTarget.position);
     }
 }

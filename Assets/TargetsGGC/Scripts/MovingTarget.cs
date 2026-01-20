@@ -106,4 +106,9 @@ public class TargetMoving : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public bool IsDead()
+    {
+        return currentHP <= 0;
+    }
 }
