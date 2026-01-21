@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0e63acd552f3734cb3577dd7a6ac066, type: 3}
+  m_Name: Shooting
+  m_EditorClassIdentifier: 
+  transitions:
+  - condition: {fileID: 11400000, guid: e8b82d90b106d764980e60a1e8e6e0f5, type: 2}
+    state: {fileID: 11400000, guid: 172c7bbfd6efc4c4288e9515224135d0, type: 2}
+  - condition: {fileID: 11400000, guid: 27417acf538f84045bdf366208c65180, type: 2}
+    state: {fileID: 11400000, guid: d346d87dd285df84ebfbe5c8a25d577a, type: 2}
+  - condition: {fileID: 11400000, guid: 3e34589aef79d6b4b98db616403ec803, type: 2}
+    state: {fileID: 11400000, guid: 90d4f4b3f31b90b45b5bdcbde2f59e90, type: 2}
