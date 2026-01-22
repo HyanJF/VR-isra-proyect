@@ -3,7 +3,7 @@ using UnityEngine;
 public class DummyAccuracyManager : MonoBehaviour
 {
     [Header("Accuracy Settings")]
-    [Tooltip("Time window in seconds to evaluate accuracy")]
+    [Tooltip("Time window in seconds to evaluate acuracy")]
     public float evaluationWindow = 15f;
 
     public int shotsFired;
@@ -66,6 +66,15 @@ public class DummyAccuracyManager : MonoBehaviour
     
     public void ResetCounters()
     {
+       
+        shotsFired = 0;
+        hits = 0;
+        timer = 0f;
+    }
+
+    public void ResetActivation()
+    {
+        HasBeenActivated = false;
         shotsFired = 0;
         hits = 0;
         timer = 0f;

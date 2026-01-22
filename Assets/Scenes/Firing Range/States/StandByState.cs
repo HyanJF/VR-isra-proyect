@@ -5,6 +5,10 @@ public class StandByState : State_Range
 {
     public override void EnterState(StateMachine_Range sm)
     {
-        sm.GetComponent<DummyMovementController>().StandBy();
+        var controller = sm.GetComponent<DummyMovementController>();
+        var accuracy = sm.GetComponent<DummyAccuracyManager>();
+
+        controller.StandBy();
+        accuracy.ResetActivation();
     }
 }

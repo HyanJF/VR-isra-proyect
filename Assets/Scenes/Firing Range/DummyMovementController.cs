@@ -33,6 +33,15 @@ public class DummyMovementController : MonoBehaviour
     [Header("Back To Start")]
     public float timeBeforeReturn = 60f;
 
+    [Header("Visual Feedback")]
+    [Tooltip("Renderer del dummy para cambiarle el color")]
+    public Renderer targetRenderer;
+
+    public Color easyColor = Color.green;
+    public Color regularColor = Color.yellow;
+    public Color hardColor = Color.red;
+    public Color standbyColor = Color.blue;
+
     private List<Transform> currentRoute;
     private int currentIndex;
     private float activeTimer;
@@ -47,6 +56,9 @@ public class DummyMovementController : MonoBehaviour
         accuracyManager = GetComponent<DummyAccuracyManager>();
         agent.stoppingDistance = stoppingDistance;
         agent.isStopped = true;
+
+
+        SetColor(standbyColor);
     }
 
     private void Update()
@@ -68,26 +80,41 @@ public class DummyMovementController : MonoBehaviour
     {
         agent.isStopped = true;
         activeTimer = 0f;
+
+        SetColor(standbyColor);
     }
 
     public void SetEasy()
     {
+        SetColor(easyColor);
+
+
         ApplyMovement(easySpeed, easyAcceleration, easyPoints);
     }
 
     public void SetRegular()
     {
+        SetColor(regularColor);
+
+
         ApplyMovement(regularSpeed, regularAcceleration, regularPoints);
     }
 
     public void SetHard()
     {
+
+        SetColor(hardColor);
+
+
         ApplyMovement(hardSpeed, hardAcceleration, hardPoints);
     }
 
     public void GoBackToStart()
     {
         agent.isStopped = false;
+
+        SetColor(standbyColor);
+
         agent.SetDestination(startPoint.position);
     }
 
@@ -123,8 +150,14 @@ public class DummyMovementController : MonoBehaviour
         return accuracyManager.GetAccuracy();
     }
 
-    public void ResetReachedPointFlag()
+    // ======================= Visual =======================
+
+    private void SetColor(Color color)
     {
-        ReachedPoint = false;
+        if (targetRenderer != null)
+        {
+            targetRenderer.material.color = color;
+        }
     }
+
 }
