@@ -8,6 +8,7 @@ TagManager:
   - Bullet
   - Gun
   - Dummies
+  - RangeTarget
   layers:
   - Default
   - TransparentFX
