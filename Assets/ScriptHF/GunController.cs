@@ -38,7 +38,7 @@ public class GunController : MonoBehaviour
 
         currentAmmo--;
         UpdateAmmoText();
-
+        
         if (currentAmmo <= 0)
         {
             EmptyGun();
