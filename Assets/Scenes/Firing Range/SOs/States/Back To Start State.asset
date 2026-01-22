@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Back To Start State
   m_EditorClassIdentifier: 
   transitions:
-  - condition: {fileID: 0}
+  - condition: {fileID: 11400000, guid: c9f5a6573432b234b8495fb7f4490b68, type: 2}
     state: {fileID: 11400000, guid: 524c4a3e9446c6d4c8b774ad48185e29, type: 2}
