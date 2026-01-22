@@ -19,11 +19,11 @@ A continuación, se hablará más a detalle de cada IA dentro del proyecto:
 
 ### - Hyan
 #### Game Master
-<escribir aqui>
+Es un Game Master que toma los resultados del jugador y cambia el entorno de la prueba.
 
 ### - Gibran
 #### Shooting range con dummy reaccionable
-<escribir aqui>
+IA que se adapta a la puntería del jugador dentro de un campo de tiro, y, dependiendo de su porcentaje de puntería, cambia el patrón de movimiento de la IA, así como su velocidad.
 
 ### - Daniel
 #### IA Competitiva
