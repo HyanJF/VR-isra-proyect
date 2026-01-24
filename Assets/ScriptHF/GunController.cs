@@ -1,12 +1,12 @@
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 
 public class GunController : MonoBehaviour
 {
     [Header("Disparo")]
-    public GameObject bulletPrefab;
     public Transform shootPoint;
-    public float bulletSpeed = 20f;
+    public float range = 100f;
+    public LayerMask hitLayers;
 
     [Header("Balas")]
     public int maxAmmo = 99;
@@ -17,7 +17,7 @@ public class GunController : MonoBehaviour
 
     [Header("Bolt")]
     public Animator boltAnimator;
-    public string boltEmptyBool = "Descargar";
+    public string boltEmptyBool = "descargar";
 
     private bool isEmpty = false;
 
@@ -32,16 +32,48 @@ public class GunController : MonoBehaviour
         if (isEmpty || currentAmmo <= 0)
             return;
 
-        GameObject b = Instantiate(bulletPrefab, shootPoint.position, Quaternion.identity);
-        Rigidbody rb = b.GetComponent<Rigidbody>();
-        rb.linearVelocity = shootPoint.forward * bulletSpeed;
-
         currentAmmo--;
         UpdateAmmoText();
-        
-        if (currentAmmo <= 0)
+
+        RaycastHit hit;
+
+        Debug.DrawRay(
+            shootPoint.position,
+            shootPoint.forward * range,
+            Color.red,
+            1f
+        );
+
+        if (Physics.Raycast(
+            shootPoint.position,
+            shootPoint.forward,
+            out hit,
+            range,
+            hitLayers))
         {
+            HandleHit(hit.collider);
+        }
+
+        if (currentAmmo <= 0)
             EmptyGun();
+    }
+
+    private void HandleHit(Collider other)
+    {
+        DummyAccuracyManager accuracyManager =
+            other.GetComponentInParent<DummyAccuracyManager>();
+
+        if (accuracyManager != null)
+        {
+            accuracyManager.RegisterHit();
+        }
+
+        TargetMoving movingTarget =
+            other.GetComponentInParent<TargetMoving>();
+
+        if (movingTarget != null)
+        {
+            movingTarget.TakeDamage();
         }
     }
 
