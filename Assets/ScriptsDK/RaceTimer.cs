@@ -40,6 +40,9 @@ public class RaceTimer : MonoBehaviour
     {
         running = false;
         finished = true;
+
+        RunStats.lastRunTime = elapsed;
+
         UpdateDisplay(elapsed);
     }
 

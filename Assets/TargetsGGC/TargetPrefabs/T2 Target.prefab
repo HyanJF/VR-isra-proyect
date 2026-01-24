@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6127821358596194463}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Target 1 Waypoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4216823671220844313}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Waypoint 2
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
@@ -58,7 +58,7 @@ Transform:
   m_GameObject: {fileID: 2111356711579843136}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.656}
+  m_LocalPosition: {x: 0, y: -1.12, z: 1.656}
   m_LocalScale: {x: 0.49737602, y: 0.49737602, z: 0.49737602}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -73,9 +73,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 467532615368381362}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: T2 Target
-  m_TagString: Untagged
+  m_TagString: Dummies
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -88,7 +88,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6436701280602857458}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.042, y: 8.98, z: -7.939}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -106,7 +106,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3843138799237252397}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Waypoint 1
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
@@ -122,7 +122,7 @@ Transform:
   m_GameObject: {fileID: 6566308923982326556}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.629}
+  m_LocalPosition: {x: 0, y: 1.419, z: -1.741}
   m_LocalScale: {x: 0.49737602, y: 0.49737602, z: 0.49737602}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -141,9 +141,9 @@ GameObject:
   - component: {fileID: 5905847379833664920}
   - component: {fileID: 317602092050635870}
   - component: {fileID: 8922764269302708420}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Target 1 Object
-  m_TagString: Untagged
+  m_TagString: Dummies
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -149,9 +149,10 @@ GameObject:
   - component: {fileID: 2954216044665033574}
   - component: {fileID: 6897992626571102040}
   - component: {fileID: 8789372867057763255}
+  - component: {fileID: 1976497592078655751}
   m_Layer: 0
   m_Name: Weapon Fix
-  m_TagString: Untagged
+  m_TagString: Gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -374,8 +375,30 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 2, z: 1.5}
+  m_Center: {x: 0, y: 0.2, z: 0}
+--- !u!95 &1976497592078655751
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3530342769130779388}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3c977e2e2da14924c82edb41fbde8678, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4263624248448491402
 GameObject:
   m_ObjectHideFlags: 0
@@ -866,13 +889,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7475470647085266257}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 0, y: 1.3330003, z: -0.5709999}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 1.5340011, z: -0.5709999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3092606068147354764}
-  m_LocalEulerAnglesHint: {x: 270, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!114 &786232707767104650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -885,11 +908,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 266bb9d3556b7374d9d8e1fd6b376542, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 4944815799496555262, guid: dea5ede5e2bfc574abc7066426d7b13d, type: 3}
   shootPoint: {fileID: 8504088742521662625}
-  bulletSpeed: 30
-  maxAmmo: 12
+  range: 500
+  hitLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  maxAmmo: 7
+  currentAmmo: 0
   ammoText: {fileID: 5277971943498561750}
+  boltAnimator: {fileID: 1976497592078655751}
+  boltEmptyBool: descargar
 --- !u!1 &8639196948423434196
 GameObject:
   m_ObjectHideFlags: 0
@@ -1003,7 +1031,7 @@ Transform:
   m_GameObject: {fileID: 8710864421678550857}
   serializedVersion: 2
   m_LocalRotation: {x: -0.70710677, y: 0.00000006181724, z: -2.7021173e-15, w: 0.7071068}
-  m_LocalPosition: {x: 0.0045391847, y: -0.17529939, z: -0.56321335}
+  m_LocalPosition: {x: 0.004539185, y: -0.17529939, z: -0.56321335}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

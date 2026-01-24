@@ -7,6 +7,7 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 public class SceneResetButton : MonoBehaviour
 {
     XRSimpleInteractable interactable;
+    public RaceTimer raceTimer;
 
     void Awake()
     {
@@ -21,6 +22,9 @@ public class SceneResetButton : MonoBehaviour
 
     void OnPressed(SelectEnterEventArgs args)
     {
+        if (raceTimer != null)
+            raceTimer.StopTimer();
+
         // Reload the currently active scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
