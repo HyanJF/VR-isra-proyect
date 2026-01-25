@@ -3,15 +3,16 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "HasDetectedTarget", menuName = "FSM/Conditions/HasDetectedTarget")]
 public class HasDetectedTarget : Condition
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override bool Check(StateMachine sm)
     {
-        
-    }
+        CompetitiveAI ai = sm.GetComponent<CompetitiveAI>();
+        Transform t = ai.FindNearestDummy();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (t != null)
+        {
+            ai.currentTarget = t;
+            return true;
+        }
+        return false;
     }
 }

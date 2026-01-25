@@ -14,4 +14,10 @@ public class ScoreManager : MonoBehaviour
 
         Debug.Log($"Target Destroyed! Total Destroyed: {destroyedTargets}");
     }
+
+    public int GetDestroyedTargets()
+    {
+        return destroyedTargets;
+    }
+
 }
