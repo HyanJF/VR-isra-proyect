@@ -3,15 +3,15 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "HasTargetDied", menuName = "FSM/Conditions/HasTargetDied")]
 public class HasTargetDied : Condition
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override bool Check(StateMachine sm)
     {
-        
-    }
+        CompetitiveAI ai = sm.GetComponent<CompetitiveAI>();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (ai.currentTarget == null)
+        {
+            ai.AddScore(1);
+            return true;
+        }
+        return false;
     }
 }
